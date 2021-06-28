@@ -5,7 +5,8 @@ public class Magnum implements Eatable{
 
 
     public Magnum() {
-// TODO: if not args -> should be MILKCHOCOLATE
+        this.type= MagnumType.MILKCHOCOLATE;
+
     }
 
     public Magnum(MagnumType type) {

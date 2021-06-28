@@ -7,7 +7,7 @@ public class Cone implements Eatable{
     private Flavor[] balls = new Flavor[10];
 
     public Cone() {
-// TODO: if not args -> 1 VANILLA ball
+        balls[0]=Flavor.VANILLA;
     }
 
     public Cone(Flavor[] balls) {

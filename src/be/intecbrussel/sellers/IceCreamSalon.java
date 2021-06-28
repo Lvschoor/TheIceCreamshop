@@ -4,7 +4,7 @@ import be.intecbrussel.eatables.*;
 
 public class IceCreamSalon implements IceCreamSeller{
 
-    private PriceList pricelist = new PriceList();
+    public PriceList pricelist;
     private double totalProfit=0;
 
     public double getTotalProfit() {
@@ -40,8 +40,8 @@ public class IceCreamSalon implements IceCreamSeller{
 
     @Override
     public String toString() {
-        return "IceCreamSalon{" +
-                "totalProfit=" + totalProfit +
-                '}';
+        return "IceCreamSalon: " +
+                "Profit = " + totalProfit +
+                '.';
     }
 }

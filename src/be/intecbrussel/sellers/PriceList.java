@@ -37,7 +37,24 @@ public class PriceList {
     }
 
     public double getMagnumPrice(MagnumType magnumType) {
-// TODO: return price depending on type of magnum; switch-case could be used here
-        return 0;
+        double magnumPrice=0;
+        switch (magnumType){
+            case MILKCHOCOLATE:
+                magnumPrice=magnumStandardPrice;
+                break;
+            case WHITECHOCOLATE:
+                magnumPrice=magnumStandardPrice*1.2;
+                break;
+            case BLACKCHOCOLATE:
+                magnumPrice=magnumStandardPrice*1.2;
+                break;
+            case ALPINENUTS:
+                magnumPrice=magnumStandardPrice*1.5;
+                break;
+            case ROMANTICSTRAWBERRIES:
+                magnumPrice=magnumStandardPrice*1.7;
+                break;
+        }
+        return magnumPrice;
     }
 }
