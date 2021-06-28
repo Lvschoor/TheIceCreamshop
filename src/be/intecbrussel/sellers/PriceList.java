@@ -11,9 +11,9 @@ public class PriceList {
     }
 
     public PriceList(double ballPrice, double rocketPrice, double magnumStandardPrice) {
-        this.ballPrice = ballPrice;
-        this.rocketPrice = rocketPrice;
-        this.magnumStandardPrice = magnumStandardPrice;
+        setBallPrice(ballPrice);
+        setRocketPrice(rocketPrice);
+        setMagnumStandardPrice(magnumStandardPrice);
     }
 
     public void setBallPrice(double ballPrice) {
@@ -24,8 +24,8 @@ public class PriceList {
         this.rocketPrice = rocketPrice;
     }
 
-    public double getMagnumStandardPrice() {
-        return magnumStandardPrice;
+    public void setMagnumStandardPrice(double magnumStandardPrice) {
+        this.magnumStandardPrice = magnumStandardPrice;
     }
 
     public double getBallPrice() {
@@ -43,8 +43,6 @@ public class PriceList {
                 magnumPrice=magnumStandardPrice;
                 break;
             case WHITECHOCOLATE:
-                magnumPrice=magnumStandardPrice*1.2;
-                break;
             case BLACKCHOCOLATE:
                 magnumPrice=magnumStandardPrice*1.2;
                 break;
