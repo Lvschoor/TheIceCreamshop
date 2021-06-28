@@ -8,16 +8,21 @@ public class IceCreamCar implements IceCreamSeller {
     private Stock stock;
     private double profit =0;
 
-    public Cone prepareCone(Flavor[] flavors) {
+    public IceCreamCar(PriceList pricelist, Stock stock) {
+        this.pricelist = pricelist;
+        this.stock = stock;
+    }
+
+    private Cone prepareCone(Flavor[] flavors) {
 //TODO: add code to check stock for cones and balls; if enough in stock:place order, else throw exception
         return null;
     }
-    public IceRocket prepareIceRocket() {
+    private IceRocket prepareIceRocket() {
 //TODO: add code to check stock for IceRockets; if in stock:place order, else throw exception
 
         return null;
     }
-    public Magnum prepareMagnum(MagnumType type) {
+    private Magnum prepareMagnum(MagnumType type) {
 //TODO: add code to check stock for type of Magnum; if in stock:place order, else throw exception
 
         return null;

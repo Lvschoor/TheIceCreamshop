@@ -8,8 +8,7 @@ public class IceCreamApp {
 
     public static void main(String[] args) {
         PriceList priceList= new  PriceList(1, 2, 2.5);
-        IceCreamSeller iceCreamSalon = new IceCreamSalon();
-        ((IceCreamSalon) iceCreamSalon).pricelist = priceList;
+        IceCreamSeller iceCreamSalon = new IceCreamSalon(priceList);
         Eatable[] orderList = new Eatable[100];
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++

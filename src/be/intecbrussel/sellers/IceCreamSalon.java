@@ -7,6 +7,10 @@ public class IceCreamSalon implements IceCreamSeller{
     public PriceList pricelist;
     private double totalProfit=0;
 
+    public IceCreamSalon(PriceList pricelist) {
+        this.pricelist = pricelist;
+    }
+
     @Override
     public double getProfit() {
         return totalProfit;
