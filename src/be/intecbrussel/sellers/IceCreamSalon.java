@@ -7,7 +7,8 @@ public class IceCreamSalon implements IceCreamSeller{
     public PriceList pricelist;
     private double totalProfit=0;
 
-    public double getTotalProfit() {
+    @Override
+    public double getProfit() {
         return totalProfit;
     }
 
@@ -15,7 +16,6 @@ public class IceCreamSalon implements IceCreamSeller{
     public Cone orderCone(Flavor... flavors) {
         Cone cone = new Cone(flavors);
         totalProfit+= pricelist.getBallPrice()* flavors.length;
-
         return cone;
     }
 
@@ -33,10 +33,7 @@ public class IceCreamSalon implements IceCreamSeller{
         return magnum;
     }
 
-    @Override
-    public double getProfit() {
-        return totalProfit;
-    }
+
 
     @Override
     public String toString() {
