@@ -13,9 +13,9 @@ public class IceCreamCar implements IceCreamSeller {
         this.stock = stock;
     }
 
-    private Cone prepareCone(Flavor[] flavors) throws NoMoreIceCreamException {
-        if (stock.getBalls()< flavors.length){
-            throw new NoMoreIceCreamException("No more Ice cream balls available.");
+    private Cone prepareCone(Cone.Flavor[] flavors) throws NoMoreIceCreamException {
+        if (stock.getBalls()< flavors.length || stock.getCones()<1){
+            throw new NoMoreIceCreamException("No more Cones available.");
         } else {
             return new Cone(flavors);
         }
@@ -29,7 +29,7 @@ public class IceCreamCar implements IceCreamSeller {
             return new IceRocket();
         }
     }
-    private Magnum prepareMagnum(MagnumType type) throws NoMoreIceCreamException {
+    private Magnum prepareMagnum(Magnum.MagnumType type) throws NoMoreIceCreamException {
         if (stock.getMagni()<1){
             throw new NoMoreIceCreamException("No more Magnums available.");
         } else {
@@ -38,7 +38,7 @@ public class IceCreamCar implements IceCreamSeller {
     }
 
     @Override
-    public Cone orderCone(Flavor... flavors) throws NoMoreIceCreamException {
+    public Cone orderCone(Cone.Flavor... flavors) throws NoMoreIceCreamException {
         Cone cone = prepareCone(flavors);
         profit += pricelist.getBallPrice()* flavors.length;
         stock.setBalls(stock.getBalls()- flavors.length);
@@ -54,7 +54,7 @@ public class IceCreamCar implements IceCreamSeller {
     }
 
     @Override
-    public Magnum orderMagnum(MagnumType type) throws NoMoreIceCreamException {
+    public Magnum orderMagnum(Magnum.MagnumType type) throws NoMoreIceCreamException {
         Magnum magnum = prepareMagnum(type);
         profit += pricelist.getMagnumPrice(type);
         stock.setMagni(stock.getMagni()-1);

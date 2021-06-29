@@ -1,6 +1,6 @@
 package be.intecbrussel.sellers;
 
-import be.intecbrussel.eatables.MagnumType;
+import be.intecbrussel.eatables.Magnum;
 
 public class PriceList {
     private double ballPrice;
@@ -36,7 +36,7 @@ public class PriceList {
         return rocketPrice;
     }
 
-    public double getMagnumPrice(MagnumType magnumType) {
+    public double getMagnumPrice(Magnum.MagnumType magnumType) {
         double magnumPrice=0;
         switch (magnumType){
             case MILKCHOCOLATE:

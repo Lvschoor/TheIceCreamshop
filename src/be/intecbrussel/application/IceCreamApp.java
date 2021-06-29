@@ -15,8 +15,8 @@ public class IceCreamApp {
 
         try {
             orderList[0] = (iceCreamSalon).orderIceRocket();
-            orderList[1] = iceCreamSalon.orderCone(new Flavor[]{Flavor.VANILLA, Flavor.CHOCOLATE});
-            orderList[2] = iceCreamSalon.orderMagnum(MagnumType.ALPINENUTS);
+            orderList[1] = iceCreamSalon.orderCone(new Cone.Flavor[]{Cone.Flavor.VANILLA, Cone.Flavor.CHOCOLATE});
+            orderList[2] = iceCreamSalon.orderMagnum(Magnum.MagnumType.ALPINENUTS);
 
 
         } catch (NoMoreIceCreamException e) {
@@ -30,7 +30,7 @@ public class IceCreamApp {
             }
         }
 
-        System.out.println(iceCreamSalon.getProfit());
+        System.out.println("Total profit is: €" + (iceCreamSalon.getProfit())+".");
         System.out.println(iceCreamSalon);
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

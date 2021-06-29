@@ -16,6 +16,11 @@ public class Cone implements Eatable{
 
     @Override
     public void eat() {
-        System.out.println("You are eating an ice cream cone with the following flavors:"+ Arrays.toString(balls));
+        System.out.println("You are eating an Ice Cream Cone with the following flavors:"+ Arrays.toString(balls)+".");
+    }
+
+    // defining flavors if icecream balls available
+    public enum Flavor {
+        STRAWBERRY, BANANA, CHOCOLATE, VANILLA, LEMON, STRACIATELLA, MOKKA, PISTACHE
     }
 }

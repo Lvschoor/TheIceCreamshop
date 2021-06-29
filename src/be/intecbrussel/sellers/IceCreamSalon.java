@@ -17,7 +17,7 @@ public class IceCreamSalon implements IceCreamSeller{
     }
 
     @Override
-    public Cone orderCone(Flavor... flavors) {
+    public Cone orderCone(Cone.Flavor... flavors) {
         Cone cone = new Cone(flavors);
         totalProfit+= pricelist.getBallPrice()* flavors.length;
         return cone;
@@ -31,7 +31,7 @@ public class IceCreamSalon implements IceCreamSeller{
     }
 
     @Override
-    public Magnum orderMagnum(MagnumType type) {
+    public Magnum orderMagnum(Magnum.MagnumType type) {
         Magnum magnum = new Magnum(type);
         totalProfit += pricelist.getMagnumPrice(type);
         return magnum;
@@ -42,7 +42,7 @@ public class IceCreamSalon implements IceCreamSeller{
     @Override
     public String toString() {
         return "IceCreamSalon: " +
-                "Profit = " + totalProfit +
+                "Profit = €" + totalProfit +
                 '.';
     }
 }

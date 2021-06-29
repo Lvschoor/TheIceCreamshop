@@ -1,6 +1,9 @@
 package be.intecbrussel.eatables;
 
 public class Magnum implements Eatable{
+
+
+
     private MagnumType type;
 
 
@@ -21,5 +24,10 @@ public class Magnum implements Eatable{
     public void eat() {
         System.out.println("You are eating a "+ getType()+ " Magnum.");
 
+    }
+
+    // defining types of Magnums available
+    public enum MagnumType {
+        MILKCHOCOLATE, WHITECHOCOLATE, BLACKCHOCOLATE, ALPINENUTS, ROMANTICSTRAWBERRIES
     }
 }
