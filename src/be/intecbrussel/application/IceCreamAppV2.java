@@ -3,24 +3,35 @@ package be.intecbrussel.application;
 import be.intecbrussel.eatables.Eatable;
 import be.intecbrussel.eatables.Flavor;
 import be.intecbrussel.eatables.MagnumType;
-import be.intecbrussel.sellers.IceCreamSalon;
-import be.intecbrussel.sellers.IceCreamSeller;
-import be.intecbrussel.sellers.PriceList;
-import be.intecbrussel.sellers.Stock;
+import be.intecbrussel.sellers.*;
 
 
 public class IceCreamAppV2 {
 
     public static void main(String[] args) {
         PriceList priceList= new  PriceList(1, 2, 2.5);
-        Stock stock= new Stock();
-        IceCreamSeller iceCreamCar = new IceCreamSalon(priceList);
+ // TODO: check if we want to initialize stock on every run?
+        Stock stock= new Stock(0,20,100,0);
+        IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
         Eatable[] orderList = new Eatable[100];
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        orderList[0] = iceCreamCar.orderIceRocket();
-        orderList[1] = iceCreamCar.orderCone(new Flavor[]{Flavor.VANILLA, Flavor.CHOCOLATE});
-        orderList[2] = iceCreamCar.orderMagnum(MagnumType.ALPINENUTS);
+        try {
+            orderList[0] = iceCreamCar.orderIceRocket();
+        } catch (NoMoreIceCreamException nmice ){
+            System.out.println(nmice.getMessage());
+        }
+        try {
+            orderList[1] = iceCreamCar.orderCone(new Flavor[]{Flavor.VANILLA, Flavor.CHOCOLATE});
+        } catch (NoMoreIceCreamException nmice) {
+            System.out.println(nmice.getMessage());
+        }
+        try {
+            orderList[2] = iceCreamCar.orderMagnum(MagnumType.ALPINENUTS);
+        } catch (NoMoreIceCreamException nmice) {
+            System.out.println(nmice.getMessage());
+
+        }
 
         for (Eatable orderItem : orderList) {
             if (orderItem != null) {
@@ -28,8 +39,7 @@ public class IceCreamAppV2 {
             }
         }
 
-        System.out.println(iceCreamCar.getProfit());
-        System.out.println(iceCreamCar);
+        System.out.println("Total profit is: "+ iceCreamCar.getProfit());
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 

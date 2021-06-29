@@ -6,6 +6,13 @@ public class Stock {
     private int cones;
     private int balls;
     private int magni;
+// Constructor to initialize the stock
+    public Stock(int iceRockets, int cones, int balls, int magni) {
+        this.iceRockets = iceRockets;
+        this.cones = cones;
+        this.balls = balls;
+        this.magni = magni;
+    }
 
     public int getIceRockets() {
         return iceRockets;

@@ -9,7 +9,7 @@ public class PriceList {
 
     public PriceList() {
     }
-
+// Constructor to build pricelist for give shop
     public PriceList(double ballPrice, double rocketPrice, double magnumStandardPrice) {
         setBallPrice(ballPrice);
         setRocketPrice(rocketPrice);

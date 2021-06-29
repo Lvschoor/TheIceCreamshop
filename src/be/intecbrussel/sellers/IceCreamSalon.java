@@ -4,7 +4,7 @@ import be.intecbrussel.eatables.*;
 
 public class IceCreamSalon implements IceCreamSeller{
 
-    public PriceList pricelist;
+    private PriceList pricelist;
     private double totalProfit=0;
 
     public IceCreamSalon(PriceList pricelist) {

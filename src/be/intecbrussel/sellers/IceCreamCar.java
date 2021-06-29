@@ -4,7 +4,7 @@ import be.intecbrussel.eatables.*;
 
 public class IceCreamCar implements IceCreamSeller {
 
-    public PriceList pricelist;
+    private PriceList pricelist;
     private Stock stock;
     private double profit =0;
 
@@ -13,43 +13,51 @@ public class IceCreamCar implements IceCreamSeller {
         this.stock = stock;
     }
 
-    private Cone prepareCone(Flavor[] flavors) {
-//TODO: add code to check stock for cones and balls; if enough in stock:place order, else throw exception
-        return null;
-    }
-    private IceRocket prepareIceRocket() {
-//TODO: add code to check stock for IceRockets; if in stock:place order, else throw exception
+    private Cone prepareCone(Flavor[] flavors) throws NoMoreIceCreamException {
+        if (stock.getBalls()< flavors.length){
+            throw new NoMoreIceCreamException("No more Ice cream balls available.");
+        } else {
+            return new Cone(flavors);
+        }
 
-        return null;
     }
-    private Magnum prepareMagnum(MagnumType type) {
-//TODO: add code to check stock for type of Magnum; if in stock:place order, else throw exception
+    private IceRocket prepareIceRocket() throws NoMoreIceCreamException {
 
-        return null;
+        if (stock.getIceRockets()<1){
+            throw new NoMoreIceCreamException("No more Ice Rockets available.");
+        } else {
+            return new IceRocket();
+        }
+    }
+    private Magnum prepareMagnum(MagnumType type) throws NoMoreIceCreamException {
+        if (stock.getMagni()<1){
+            throw new NoMoreIceCreamException("No more Magnums available.");
+        } else {
+            return new Magnum(type);
+        }
     }
 
     @Override
-    public Cone orderCone(Flavor... flavors) {
+    public Cone orderCone(Flavor... flavors) throws NoMoreIceCreamException {
         Cone cone = prepareCone(flavors);
         profit += pricelist.getBallPrice()* flavors.length;
-//TODO: add code for stock adjustment
+        stock.setBalls(stock.getBalls()- flavors.length);
         return cone;
     }
 
     @Override
-    public IceRocket orderIceRocket() {
+    public IceRocket orderIceRocket() throws NoMoreIceCreamException{
         IceRocket iceRocket = prepareIceRocket();
         profit += pricelist.getRocketPrice();
-//TODO: add code for stock adjustment
-
+        stock.setIceRockets(stock.getIceRockets()-1);
         return iceRocket;
     }
 
     @Override
-    public Magnum orderMagnum(MagnumType type) {
+    public Magnum orderMagnum(MagnumType type) throws NoMoreIceCreamException {
         Magnum magnum = prepareMagnum(type);
         profit += pricelist.getMagnumPrice(type);
-//TODO: add code for stock adjustment
+        stock.setMagni(stock.getMagni()-1);
         return magnum;
     }
 
