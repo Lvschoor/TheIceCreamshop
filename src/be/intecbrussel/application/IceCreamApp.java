@@ -26,7 +26,7 @@ public class IceCreamApp {
                 orderItem.eat();
             }
         }
-// output the profit and also use the toString of the shop resulting in adding the shop
+        // output the profit and also use the toString of the shop resulting in adding the shop
         System.out.println("Total profit is: €" + (iceCreamSalon.getProfit()) + ".");
         System.out.println(iceCreamSalon);
 

@@ -7,16 +7,17 @@ import be.intecbrussel.sellers.*;
 public class IceCreamAppV2 {
 
     public static void main(String[] args) {
-        PriceList priceList= new  PriceList(1, 2, 2.5);
- // TODO: check if we want to initialize stock on every run?
-        Stock stock= new Stock(1,1,3,1);
+        // initialize a pricelist
+        PriceList priceList = new PriceList(1, 2, 2.5);
+        //initialize a stock
+        Stock stock = new Stock(1, 1, 3, 1);
         IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
-        Eatable[] orderList = new Eatable[100];
+        Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // create a list of orders and handle the thrown exception from order method
         try {
             orderList[0] = iceCreamCar.orderIceRocket();
-        } catch (NoMoreIceCreamException nmice ){
+        } catch (NoMoreIceCreamException nmice) {
             System.out.println(nmice.getMessage());
         }
         try {
@@ -28,18 +29,16 @@ public class IceCreamAppV2 {
             orderList[2] = iceCreamCar.orderMagnum(Magnum.MagnumType.ALPINENUTS);
         } catch (NoMoreIceCreamException nmice) {
             System.out.println(nmice.getMessage());
-
         }
 
+        // output what your are eating after ordering
         for (Eatable orderItem : orderList) {
             if (orderItem != null) {
                 orderItem.eat();
             }
         }
-
-        System.out.println("Total profit is: €"+ iceCreamCar.getProfit());
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+        // output the profit, no toString available in UML
+        System.out.println("Total profit is: €" + iceCreamCar.getProfit());
 
 
     }
