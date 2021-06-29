@@ -1,17 +1,16 @@
 package be.intecbrussel.eatables;
 
-public class Magnum implements Eatable{
-
-
+// class Cone implementing Eatable and having an inner enum MagnumType for the different types of Magnum available
+public class Magnum implements Eatable {
 
     private MagnumType type;
 
-
+    // empty constructor as per UML that creates a standard Milkchocolate Magnum
     public Magnum() {
-        this.type= MagnumType.MILKCHOCOLATE;
-
+        this.type = MagnumType.MILKCHOCOLATE;
     }
 
+    // constructor to create Magnum objects of a specific type
     public Magnum(MagnumType type) {
         this.type = type;
     }
@@ -20,9 +19,10 @@ public class Magnum implements Eatable{
         return type;
     }
 
+    // method to describe the activity of eating the magnum of a certain type
     @Override
     public void eat() {
-        System.out.println("You are eating a "+ getType()+ " Magnum.");
+        System.out.println("You are eating a " + getType() + " Magnum.");
 
     }
 
