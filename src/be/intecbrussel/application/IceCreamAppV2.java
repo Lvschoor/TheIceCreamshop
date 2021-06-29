@@ -1,8 +1,6 @@
 package be.intecbrussel.application;
 
-import be.intecbrussel.eatables.Cone;
-import be.intecbrussel.eatables.Eatable;
-import be.intecbrussel.eatables.Magnum;
+import be.intecbrussel.eatables.*;
 import be.intecbrussel.sellers.*;
 
 

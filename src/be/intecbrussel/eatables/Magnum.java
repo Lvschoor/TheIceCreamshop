@@ -23,7 +23,6 @@ public class Magnum implements Eatable {
     @Override
     public void eat() {
         System.out.println("You are eating a " + getType() + " Magnum.");
-
     }
 
     // defining types of Magnums available

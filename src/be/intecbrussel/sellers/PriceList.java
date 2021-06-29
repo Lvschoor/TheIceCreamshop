@@ -20,20 +20,20 @@ public class PriceList {
 
     // set BallPrice value and check for negative value
     public void setBallPrice(double ballPrice) {
-        if (ballPrice < 0) {
+        if (ballPrice > 0) {
             this.ballPrice = ballPrice;
         } else this.ballPrice = 0;
     }
 
     // set RocketPrice value and check for negative value
     public void setRocketPrice(double rocketPrice) {
-        if (rocketPrice < 0) {
+        if (rocketPrice > 0) {
             this.rocketPrice = rocketPrice;
         } else this.rocketPrice = 0;
     }
     // set MagnumStandardPrice value and check for negative value
     public void setMagnumStandardPrice(double magnumStandardPrice) {
-        if (magnumStandardPrice < 0) {
+        if (magnumStandardPrice > 0) {
             this.magnumStandardPrice = magnumStandardPrice;
         } else this.magnumStandardPrice = 0;
     }
