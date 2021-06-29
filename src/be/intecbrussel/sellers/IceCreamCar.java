@@ -42,6 +42,7 @@ public class IceCreamCar implements IceCreamSeller {
         Cone cone = prepareCone(flavors);
         profit += pricelist.getBallPrice()* flavors.length;
         stock.setBalls(stock.getBalls()- flavors.length);
+        stock.setCones(stock.getCones()-1);
         return cone;
     }
 

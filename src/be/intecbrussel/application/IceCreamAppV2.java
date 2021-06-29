@@ -6,7 +6,6 @@ import be.intecbrussel.utilities.Utilities;
 
 
 public class IceCreamAppV2 {
-    private boolean wrongInput = false;
 
     public static void main(String[] args) {
         // initialize a pricelist
@@ -23,9 +22,10 @@ public class IceCreamAppV2 {
         Utilities.checkIfStockUpdateNeeded(stock);
 
         System.out.println("-----------------------------");
+        System.out.println("Random order created!");
         System.out.println("Thank you for for your order!");
 
-        // create a list of orders and handle the thrown exception from order method
+ /*       // create a list of orders and handle the thrown exception from order method
         try {
             orderList[0] = iceCreamCar.orderIceRocket();
         } catch (NoMoreIceCreamException nmice) {
@@ -41,7 +41,8 @@ public class IceCreamAppV2 {
         } catch (NoMoreIceCreamException nmice) {
             System.out.println(nmice.getMessage());
         }
-
+*/
+        orderList = Utilities.createOrderList(iceCreamCar);
 
         // output what your are eating after ordering
 
@@ -53,6 +54,7 @@ public class IceCreamAppV2 {
         // output the profit, no toString available in UML
         System.out.println("Total profit for the shop is: €" + iceCreamCar.getProfit());
 
+        Utilities.showStock(stock);
     }
 
 
