@@ -2,9 +2,11 @@ package be.intecbrussel.application;
 
 import be.intecbrussel.eatables.*;
 import be.intecbrussel.sellers.*;
+import be.intecbrussel.utilities.Utilities;
 
 
 public class IceCreamAppV2 {
+    private boolean wrongInput = false;
 
     public static void main(String[] args) {
         // initialize a pricelist
@@ -13,6 +15,15 @@ public class IceCreamAppV2 {
         Stock stock = new Stock(1, 1, 3, 1);
         IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
         Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered
+
+
+
+
+        System.out.println("Welcome to the IceCreamCar app.");
+        Utilities.checkIfStockUpdateNeeded(stock);
+
+        System.out.println("-----------------------------");
+        System.out.println("Thank you for for your order!");
 
         // create a list of orders and handle the thrown exception from order method
         try {
@@ -31,15 +42,20 @@ public class IceCreamAppV2 {
             System.out.println(nmice.getMessage());
         }
 
+
         // output what your are eating after ordering
+
         for (Eatable orderItem : orderList) {
             if (orderItem != null) {
                 orderItem.eat();
             }
         }
         // output the profit, no toString available in UML
-        System.out.println("Total profit is: €" + iceCreamCar.getProfit());
-
+        System.out.println("Total profit for the shop is: €" + iceCreamCar.getProfit());
 
     }
+
+
+
+
 }
