@@ -11,9 +11,9 @@ public class IceCreamAppV2 {
         // initialize a pricelist
         PriceList priceList = new PriceList(1, 2, 2.5);
         //initialize a stock
-        Stock stock = new Stock(1, 1, 3, 1);
+        Stock stock = new Stock(4, 5, 10, 3);
         IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
-        Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered
+        Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered;
 
 
 
@@ -53,7 +53,8 @@ public class IceCreamAppV2 {
         }
         // output the profit, no toString available in UML
         System.out.println("Total profit for the shop is: €" + iceCreamCar.getProfit());
-
+        System.out.println("-------------------------------------");
+        System.out.println("Stock update after order:");
         Utilities.showStock(stock);
     }
 

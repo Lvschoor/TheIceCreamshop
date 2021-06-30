@@ -1,12 +1,7 @@
 package be.intecbrussel.utilities;
 
-import be.intecbrussel.eatables.Cone;
-import be.intecbrussel.eatables.Eatable;
-import be.intecbrussel.eatables.Magnum;
-import be.intecbrussel.sellers.IceCreamSeller;
-import be.intecbrussel.sellers.NoMoreIceCreamException;
-import be.intecbrussel.sellers.Stock;
-
+import be.intecbrussel.eatables.*;
+import be.intecbrussel.sellers.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,8 +17,6 @@ public class Utilities {
             System.out.println("Present stock:");
             showStock(stock);
         }
-
-
         System.out.print("Do you want to update the stock? (Y/N): ");
         char stockUpdate = kbd.next().charAt(0);
 
@@ -45,13 +38,10 @@ public class Utilities {
         stock.setIceRockets(kbd.nextInt());
         System.out.print("Cones: ");
         stock.setCones(kbd.nextInt());
-        ;
         System.out.print("Icecream balls: ");
         stock.setBalls(kbd.nextInt());
-        ;
         System.out.print("Magnums: ");
         stock.setMagni(kbd.nextInt());
-        ;
         System.out.println("New stock:");
         showStock(stock);
 
@@ -66,9 +56,10 @@ public class Utilities {
 
     public static Eatable[] createOrderList(IceCreamSeller iceCreamCar) {
         Eatable[] orderList = new Eatable[10];
+        Random random = new Random();
+
         for (int i = 0; i < orderList.length; i++) {
 
-            Random random = new Random();
             int iceType = random.nextInt(3) + 1;
             switch (iceType) {
                 case 1:
