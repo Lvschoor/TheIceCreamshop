@@ -11,14 +11,8 @@ Z
 +src/be/intecbrussel/sellers/Profitable.java,0\d\0ddaa5915f2f2d3b5842b8ce8acc89fe73b7a1a3
 `
 0src/be/intecbrussel/application/IceCreamApp.java,b\5\b55b1304eb2587e120ef1257733d00c19ccd5747
-V
-&src/be/intecbrussel/eatables/Cone.java,c\8\c865a768ce78adc8d573fb5dcbcfeeebfe462b5c
 [
 +src/be/intecbrussel/eatables/IceRocket.java,7\1\71b03a8aacd5f41933327f5156f21b8468da8f16
-V
-&src/be/intecbrussel/sellers/Stock.java,3\7\37dd52e35d26123f6c106781484e0ad1d0611ac8
-\
-,src/be/intecbrussel/sellers/IceCreamCar.java,7\1\71f7aba0ad280ab1f79f3d77ec77e9600b0e0a91
 h
 8src/be/intecbrussel/sellers/NoMoreIceCreamException.java,6\c\6c6fe0b17577cc58a0256a91f4f9fd2df739eb2c
 X

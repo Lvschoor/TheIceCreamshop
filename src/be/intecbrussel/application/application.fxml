@@ -6,8 +6,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="center" prefHeight="166.0" prefWidth="256.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.intecbrussel.application.Controller">
-    <Label fx:id="label1" alignment="TOP_CENTER" text="The best Ice Cream Car in the world!" textAlignment="CENTER" underline="true">
+<VBox alignment="center" prefHeight="166.0" prefWidth="256.0"
+      xmlns="http://javafx.com/javafx/11"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.intecbrussel.application.Controller">
+    <Label fx:id="label1" alignment="TOP_CENTER"
+           text="The best Ice Cream Car in the world!" textAlignment="CENTER" underline="true">
       <padding>
          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding></Label>
@@ -19,4 +22,5 @@
       <VBox.margin>
          <Insets top="10.0" />
       </VBox.margin></Button>
+    <Text fx:id="cones" text="Once the button is clicked..." />
 </VBox>
