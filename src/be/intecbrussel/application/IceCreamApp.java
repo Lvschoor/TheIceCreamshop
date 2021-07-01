@@ -1,6 +1,7 @@
 package be.intecbrussel.application;
 
 import be.intecbrussel.eatables.*;
+import be.intecbrussel.exceptions.NoMoreIceCreamException;
 import be.intecbrussel.sellers.*;
 
 // app that allows ordering different types of ice and outputs what you eat and the profit of the shop

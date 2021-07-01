@@ -1,6 +1,7 @@
 package be.intecbrussel.sellers;
 
 import be.intecbrussel.eatables.*;
+import be.intecbrussel.exceptions.NoMoreIceCreamException;
 
 // interface for all ice cream selling businesses
 public interface IceCreamSeller extends Profitable{

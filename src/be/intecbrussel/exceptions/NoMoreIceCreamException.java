@@ -1,4 +1,4 @@
-package be.intecbrussel.sellers;
+package be.intecbrussel.exceptions;
 
 // Exception class dealing with empty stock
 public class NoMoreIceCreamException  extends Exception{

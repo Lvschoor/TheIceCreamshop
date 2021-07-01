@@ -1,6 +1,7 @@
 package be.intecbrussel.utilities;
 
 import be.intecbrussel.eatables.*;
+import be.intecbrussel.exceptions.NoMoreIceCreamException;
 import be.intecbrussel.sellers.*;
 import java.util.Random;
 import java.util.Scanner;

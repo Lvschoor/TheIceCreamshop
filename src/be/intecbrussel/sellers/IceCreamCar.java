@@ -1,6 +1,7 @@
 package be.intecbrussel.sellers;
 
 import be.intecbrussel.eatables.*;
+import be.intecbrussel.exceptions.NoMoreIceCreamException;
 
 public class IceCreamCar implements IceCreamSeller {
 

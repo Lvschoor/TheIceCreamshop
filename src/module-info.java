@@ -3,4 +3,5 @@ module TheIceCreamshop {
     requires javafx.controls;
     requires javafx.fxml;
     opens be.intecbrussel.application;
+    opens be.intecbrussel.controller;
 }
