@@ -1,5 +1,6 @@
 package be.intecbrussel.application;
 
+import be.intecbrussel.controller.Controller;
 import be.intecbrussel.sellers.IceCreamCar;
 import be.intecbrussel.sellers.IceCreamSeller;
 import be.intecbrussel.sellers.PriceList;
@@ -9,22 +10,23 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.util.Objects;
 
 public class IceCreamAppFX extends Application {
-    public PriceList priceList = new PriceList(1, 2, 2.5);
-    public Stock stock = new Stock(4, 4, 10, 3);
-    public IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
-
-
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        PriceList priceList = new PriceList(1, 2, 2.5);
+        Stock stock = new Stock(4, 7, 10, 3);
+        IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
+        Controller controller = new Controller();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setController(controller);
+        Parent root = loader.load(Objects.requireNonNull(getClass().getResource("application.fxml")));
 
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("application.fxml")));
+        controller.initializeController(stock);
 
         primaryStage.setTitle("Welcome to the Ice Cream Shop");
         primaryStage.setOnShowing((event) -> {
@@ -40,8 +42,6 @@ public class IceCreamAppFX extends Application {
     }
 
     public static void main(String[] args) {
-
-
         launch(args);
     }
 }
