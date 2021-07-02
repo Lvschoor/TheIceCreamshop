@@ -3,12 +3,15 @@ package be.intecbrussel.utilities;
 import be.intecbrussel.eatables.*;
 import be.intecbrussel.exceptions.NoMoreIceCreamException;
 import be.intecbrussel.sellers.*;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Utilities {
+
     private static boolean wrongInput;
 
+    // asking if user wants to update the stock info
     public static void checkIfStockUpdateNeeded(Stock stock) {
         Scanner kbd = new Scanner(System.in);
 

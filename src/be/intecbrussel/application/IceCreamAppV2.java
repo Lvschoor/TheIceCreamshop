@@ -13,9 +13,7 @@ public class IceCreamAppV2 {
         //initialize a stock
         Stock stock = new Stock(4, 5, 10, 3);
         IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
-        Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered;
-
-
+        Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered; only used in the commented code
 
 
         System.out.println("Welcome to the IceCreamCar app.");
@@ -42,10 +40,11 @@ public class IceCreamAppV2 {
             System.out.println(nmice.getMessage());
         }
 */
+
+        // creating a random orderList (kept the above code to show the original solution to the task)
         orderList = Utilities.createOrderList(iceCreamCar);
 
         // output what your are eating after ordering
-
         for (Eatable orderItem : orderList) {
             if (orderItem != null) {
                 orderItem.eat();
@@ -55,10 +54,10 @@ public class IceCreamAppV2 {
         System.out.println("Total profit for the shop is: €" + iceCreamCar.getProfit());
         System.out.println("-------------------------------------");
         System.out.println("Stock update after order:");
+
+        // showing the stock after the order has been executed
         Utilities.showStock(stock);
     }
-
-
 
 
 }
