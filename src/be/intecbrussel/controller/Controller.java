@@ -1,5 +1,6 @@
 package be.intecbrussel.controller;
 
+import be.intecbrussel.application.IceCreamAppFX;
 import be.intecbrussel.sellers.Stock;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -10,15 +11,14 @@ import javafx.scene.control.Label;
 
 
 public class Controller {
-
-// importing the data from stock to private variable stock
     private Stock stock;
+
+    // importing the data from stock to private variable stock
     public void initializeController(Stock stock) {
         this.stock = stock;
         //testing the import
         System.out.println("Cones in Controller: " + this.stock.getCones());
     }
-
 
     @FXML
     private Label label1;
@@ -40,6 +40,4 @@ public class Controller {
         //cones.setText("Cones in stock: "+ Integer.toString(stock.getCones()));
         System.out.println(stock);
     }
-
-
 }

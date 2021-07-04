@@ -17,6 +17,7 @@ import java.util.Objects;
 public class IceCreamAppFX extends Application {
 
 
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         PriceList priceList = new PriceList(1, 2, 2.5);
