@@ -4,20 +4,22 @@ import be.intecbrussel.application.IceCreamAppFX;
 import be.intecbrussel.sellers.Stock;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class Controller {
+public class Controller implements Initializable {
+
+    @FXML
     private Stock stock;
 
-    // importing the data from stock to private variable stock
-    public void initializeController(Stock stock) {
-        this.stock = stock;
-        //testing the import
-        System.out.println("Cones in Controller: " + this.stock.getCones());
+    public Controller(Stock stock){
+        this.stock=stock;
     }
 
     @FXML
@@ -32,12 +34,16 @@ public class Controller {
     @FXML
     private Text cones;
 
-// when button is clicked, show stock
-    //TODO: make this work
+
+    // when button is clicked, show stock
     @FXML
     public void buttonClicked(Event e) {
         System.out.println("Button clicked");
-        //cones.setText("Cones in stock: "+ Integer.toString(stock.getCones()));
-        System.out.println(stock);
+        cones.setText("Cones in stock: "+ Integer.toString(stock.getCones()));
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        cones.setText("");
     }
 }

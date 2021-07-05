@@ -6,10 +6,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="center" prefHeight="334.0" prefWidth="563.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.intecbrussel.controller.Controller">
-    <Label fx:id="label1" alignment="TOP_CENTER" prefHeight="37.0" prefWidth="279.0" text="The best Ice Cream Car in the world!" textAlignment="CENTER" underline="true">
+<?import javafx.scene.layout.FlowPane?>
+<VBox fx:id="root" alignment="center" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml" >
+    <Label fx:id="label1" alignment="TOP_CENTER" prefHeight="37.0" prefWidth="279.0"
+           text="The best Ice Cream Car in the world!" textAlignment="CENTER" underline="true">
       <padding>
-         <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </padding></Label>
     <Text fx:id="text1" text="Stock overview">
       <VBox.margin>
@@ -27,3 +30,4 @@
          <Insets top="10.0" />
       </VBox.margin></Text>
 </VBox>
+

@@ -17,7 +17,6 @@ import java.util.Objects;
 public class IceCreamAppFX extends Application {
 
 
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         PriceList priceList = new PriceList(1, 2, 2.5);
@@ -25,13 +24,10 @@ public class IceCreamAppFX extends Application {
         IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
 
 // setup MVC model
-        URL location = getClass().getResource("application.fxml");
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(location);
-        Controller controller = new Controller();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("application.fxml"));
+        Controller controller = new Controller(stock);
         loader.setController(controller);
-        controller.initializeController(stock);
-        Parent root = FXMLLoader.load(Objects.requireNonNull(location));
+        Parent root = loader.load();
 
 
 

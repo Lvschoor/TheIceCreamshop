@@ -13,6 +13,7 @@ public class IceCreamAppV2 {
         //initialize a stock
         Stock stock = new Stock(4, 5, 10, 3);
         IceCreamSeller iceCreamCar = new IceCreamCar(priceList, stock);
+
         Eatable[] orderList = new Eatable[100]; // allow for 100 items to be ordered; only used in the commented code
 
 
