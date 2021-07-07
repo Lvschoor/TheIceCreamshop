@@ -15,6 +15,14 @@ public class IceCreamCar implements IceCreamSeller {
         this.stock = stock;
     }
 
+    public PriceList getPricelist() {
+        return pricelist;
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
     // method to check if order is still in stock, called by order method
     private Cone prepareCone(Cone.Flavor[] flavors) throws NoMoreIceCreamException {
         if (stock.getBalls() < flavors.length || stock.getCones() < 1) {

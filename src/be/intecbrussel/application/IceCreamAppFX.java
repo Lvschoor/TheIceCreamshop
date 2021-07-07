@@ -9,10 +9,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.net.URL;
-import java.util.Objects;
 
 public class IceCreamAppFX extends Application {
 
@@ -25,10 +24,10 @@ public class IceCreamAppFX extends Application {
 
 // setup MVC model
         FXMLLoader loader = new FXMLLoader(getClass().getResource("application.fxml"));
-        Controller controller = new Controller(stock);
+        Controller controller = new Controller(iceCreamCar, stock, priceList);
         loader.setController(controller);
         Parent root = loader.load();
-
+        TextField conesUpdate = new TextField();
 
 
 // setting stage title, and output to console when stage is shown

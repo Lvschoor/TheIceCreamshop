@@ -15,6 +15,8 @@ public class Stock {
         this.magni = magni;
     }
 
+
+
     public int getIceRockets() {
         return iceRockets;
     }

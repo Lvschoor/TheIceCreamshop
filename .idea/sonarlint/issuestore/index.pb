@@ -15,5 +15,3 @@ D
 src/module-info.java,c\d\cdc434daeee688944ced38ff1c9875422db88382
 ^
 .src/be/intecbrussel/sellers/IceCreamSalon.java,6\7\6734316a6f9674bfcfb2ac83b9aec40dc7c6508d
-\
-,src/be/intecbrussel/sellers/IceCreamCar.java,7\1\71f7aba0ad280ab1f79f3d77ec77e9600b0e0a91
