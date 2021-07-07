@@ -19,54 +19,59 @@
         </padding>
     </Label>
     <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
-            <AnchorPane minHeight="30.0" minWidth="0.0" prefHeight="50.0" prefWidth="100.0">
-                    <Button fx:id="button1" layoutX="80.0" layoutY="20.0" onAction="#button1Clicked"
-                            text="Get stock status">
-                        <padding>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                        </padding>
-                    </Button>
-            </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                    <Button fx:id="button2" layoutX="90.0" layoutY="20.0" onAction="#button2Clicked"
-                            text="Update stock">
-                        <padding>
-                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                        </padding>
-                    </Button>
-            </AnchorPane>
+        <AnchorPane minHeight="30.0" minWidth="0.0" prefHeight="50.0" prefWidth="100.0">
+            <Button fx:id="button1" layoutX="15.0" layoutY="20.0" onAction="#button1Clicked"
+                    text="Get stock status">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+            </Button>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <Button fx:id="button2" layoutX="15.0" layoutY="20.0" onAction="#button2Clicked"
+                    text="Update stock">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+            </Button>
+        </AnchorPane>
     </SplitPane>
     <SplitPane fx:id="infoFields" dividerPositions="0.5" layoutX="10.0" layoutY="192.0" prefHeight="160.0"
                prefWidth="200.0" visible="false">
-            <AnchorPane minHeight="180.0" minWidth="0.0" prefHeight="200.0" prefWidth="100.0">
+        <AnchorPane minHeight="200.0" minWidth="0.0" prefHeight="200.0" prefWidth="100.0">
+            <Text fx:id="text1" layoutX="15.0" layoutY="30.0" text="Stock overview" visible="false"/>
+            <Text fx:id="cones" layoutX="15.0" layoutY="60.0"/>
+            <Text fx:id="balls" layoutX="15.0" layoutY="90.0"/>
+            <Text fx:id="iceRockets" layoutX="15.0" layoutY="120.0"/>
+            <Text fx:id="magni" layoutX="15.0" layoutY="150.0"/>
+        </AnchorPane>
+        <AnchorPane minHeight="200.0" minWidth="0.0" prefHeight="200.0" prefWidth="100.0">
+            <Text fx:id="text2" layoutX="15.0" layoutY="30.0" text="Update stock"/>
 
-                    <Text fx:id="text1" layoutX="15.0" layoutY="30.0" text="Stock overview" visible="false"/>
-                    <Text fx:id="cones" layoutX="15.0" layoutY="60.0"/>
-                    <Text fx:id="balls" layoutX="15.0" layoutY="90.0"/>
-                    <Text fx:id="iceRockets" layoutX="15.0" layoutY="120.0"/>
-                    <Text fx:id="magni" layoutX="15.0" layoutY="150.0"/>
-            </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                <Text fx:id="text2" layoutX="15.0" layoutY="30.0" text="Update stock"/>
+            <TextFlow fx:id="updateCones" layoutX="15.0" layoutY="45.0">
+                <Text fx:id="cones2" text="Cones: "/>
+                <TextField fx:id="conesUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
+            </TextFlow>
 
-                    <TextFlow layoutX="15.0" layoutY="45.0">
-                            <Text fx:id="cones2" text="Cones: "/>
-                            <TextField fx:id="conesUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
-                    </TextFlow>
-
-                    <TextFlow layoutX="15.0" layoutY="75.0">
-                            <Text fx:id="balls2" text="Ice cream balls: "/>
-                            <TextField fx:id="ballsUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
-                    </TextFlow>
-                    <TextFlow layoutX="15.0" layoutY="105.0">
-                            <Text fx:id="iceRockets2" text="Ice Rockets: "/>
-                            <TextField fx:id="iceRocketsUpdate" maxHeight="20" maxWidth="40" minHeight="20"
-                                       minWidth="40"/>
-                    </TextFlow>
-                    <TextFlow layoutX="15.0" layoutY="135.0">
-                            <Text fx:id="magni2" text="Magnums: "/>
-                            <TextField fx:id="magniUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
-                    </TextFlow>
-            </AnchorPane>
+            <TextFlow fx:id="updateBalls" layoutX="15.0" layoutY="75.0">
+                <Text fx:id="balls2" text="Ice cream balls: "/>
+                <TextField fx:id="ballsUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
+            </TextFlow>
+            <TextFlow  fx:id="updateIceRockets" layoutX="15.0" layoutY="105.0">
+                <Text fx:id="iceRockets2" text="Ice Rockets: "/>
+                <TextField fx:id="iceRocketsUpdate" maxHeight="20" maxWidth="40" minHeight="20"
+                           minWidth="40"/>
+            </TextFlow>
+            <TextFlow fx:id="updateMagni" layoutX="15.0" layoutY="135.0">
+                <Text fx:id="magni2" text="Magnums: "/>
+                <TextField fx:id="magniUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
+            </TextFlow>
+            <Button fx:id="button3" layoutX="15.0" layoutY="165.0" onAction="#button3Clicked"
+                    text="Submit entries">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                </padding>
+            </Button>
+        </AnchorPane>
     </SplitPane>
 </VBox>

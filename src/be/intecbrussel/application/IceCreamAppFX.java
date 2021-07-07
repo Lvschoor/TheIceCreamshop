@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
+
 public class IceCreamAppFX extends Application {
 
 
@@ -27,7 +28,7 @@ public class IceCreamAppFX extends Application {
         Controller controller = new Controller(iceCreamCar, stock, priceList);
         loader.setController(controller);
         Parent root = loader.load();
-        TextField conesUpdate = new TextField();
+        //TextField conesUpdate = new TextField();
 
 
 // setting stage title, and output to console when stage is shown
@@ -39,6 +40,9 @@ public class IceCreamAppFX extends Application {
         primaryStage.setScene(new Scene(root, 500, 300));
 // showing scene
         primaryStage.show();
+
+        //getting stock info
+        //stock.setCones(conesUpdate.getText());
 //output to console to confirm closing stage
         primaryStage.setOnCloseRequest((event) -> {
             System.out.println("Closing Stage");
