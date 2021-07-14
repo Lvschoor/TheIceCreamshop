@@ -302,11 +302,10 @@ public class Controller extends VBox implements Initializable {
     @FXML
     public void milkClicked() throws NoMoreIceCreamException {
         System.out.println("Milk button clicked");
-        orderButtons.setVisible(true);
-        magnumTypes.setVisible(false);
-
         orderList[items] = iceCreamCar.orderMagnum(Magnum.MagnumType.MILKCHOCOLATE);
         stockStatusClicked();
+        orderButtons.setVisible(true);
+        magnumTypes.setVisible(false);
 
 
     }
@@ -314,44 +313,40 @@ public class Controller extends VBox implements Initializable {
     @FXML
     public void whiteClicked() throws NoMoreIceCreamException {
         System.out.println("White button clicked");
-        orderButtons.setVisible(true);
-        magnumTypes.setVisible(false);
-
         orderList[items] = iceCreamCar.orderMagnum(Magnum.MagnumType.WHITECHOCOLATE);
         stockStatusClicked();
+        orderButtons.setVisible(true);
+        magnumTypes.setVisible(false);
 
     }
 
     @FXML
     public void blackClicked() throws NoMoreIceCreamException {
         System.out.println("Black button clicked");
-        orderButtons.setVisible(true);
-        magnumTypes.setVisible(false);
-
         orderList[items] = iceCreamCar.orderMagnum(Magnum.MagnumType.BLACKCHOCOLATE);
         stockStatusClicked();
+        orderButtons.setVisible(true);
+        magnumTypes.setVisible(false);
 
     }
 
     @FXML
     public void nutsClicked() throws NoMoreIceCreamException {
         System.out.println("Nuts button clicked");
-        orderButtons.setVisible(true);
-        magnumTypes.setVisible(false);
-
         orderList[items] = iceCreamCar.orderMagnum(Magnum.MagnumType.ALPINENUTS);
         stockStatusClicked();
+        orderButtons.setVisible(true);
+        magnumTypes.setVisible(false);
 
     }
 
     @FXML
     public void strawberryClicked() throws NoMoreIceCreamException {
         System.out.println("Strawberry button clicked");
-        orderButtons.setVisible(true);
-        magnumTypes.setVisible(false);
-
         orderList[items] = iceCreamCar.orderMagnum(Magnum.MagnumType.ROMANTICSTRAWBERRIES);
         stockStatusClicked();
+        orderButtons.setVisible(true);
+        magnumTypes.setVisible(false);
 
     }
 
@@ -440,9 +435,9 @@ public class Controller extends VBox implements Initializable {
     @FXML
     public void submitBallsClicked() throws NoMoreIceCreamException {
         System.out.println("Submit balls button clicked");
-        Cone.Flavor[] flavors = new Cone.Flavor[ballsCounter+1];
-        for (int i =1; i<ballsCounter+1;i++){
-                flavors[i - 1] = orderedFlavors[i];
+        Cone.Flavor[] flavors = new Cone.Flavor[ballsCounter];
+        for (int i =0; i< flavors.length;i++){
+                flavors[i] = orderedFlavors[i+1];
                 System.out.print("Ball " + i + ": ");
                 System.out.println(flavors[i]);
         }
