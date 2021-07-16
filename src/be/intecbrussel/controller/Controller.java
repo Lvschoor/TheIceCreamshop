@@ -199,6 +199,8 @@ public class Controller extends VBox implements Initializable {
         infoFields.setVisible(true);
         ballFlavors.setVisible(false);
         magnumTypes.setVisible(false);
+        iceRocket.setText("Ice Rocket");
+        magnum.setText("Magnum");
         cone.setText("Cone (max " + (Math.min(stock.getBalls(), 5)) + " balls)");
         orderButtons.setVisible(true);
 
