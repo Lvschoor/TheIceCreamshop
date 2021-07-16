@@ -25,6 +25,13 @@ public class Magnum implements Eatable {
         System.out.println("You are eating a " + getType() + " Magnum.");
     }
 
+    // method used in GUI to create array of orders in string format
+    @Override
+    public String createOrderOutput() {
+        String orderForOutput = "Magnum "+getType();
+        return orderForOutput;
+    }
+
     // defining types of Magnums available
     public enum MagnumType {
         MILKCHOCOLATE, WHITECHOCOLATE, BLACKCHOCOLATE, ALPINENUTS, ROMANTICSTRAWBERRIES

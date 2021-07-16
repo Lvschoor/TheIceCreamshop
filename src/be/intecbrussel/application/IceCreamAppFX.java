@@ -42,7 +42,7 @@ public class IceCreamAppFX extends Application {
             System.out.println("Showing Stage");
         });
 //creating Scene on stage
-        primaryStage.setScene(new Scene(root, 700, 500));
+        primaryStage.setScene(new Scene(root, 700, 600));
 
 // showing scene
         primaryStage.show();

@@ -24,6 +24,13 @@ public class Cone implements Eatable {
                 + Arrays.toString(balls) + ".");
     }
 
+    // method used in GUI to create array of orders in string format
+    @Override
+    public String createOrderOutput() {
+        String orderlistForOutput = "Cone "+Arrays.toString(balls);
+        return orderlistForOutput;
+    }
+
     // defining flavors if icecream balls available
     public enum Flavor {
         STRAWBERRY, BANANA, CHOCOLATE, VANILLA, LEMON, STRACIATELLA, MOKKA, PISTACHE

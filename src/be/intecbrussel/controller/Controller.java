@@ -132,6 +132,9 @@ public class Controller extends VBox implements Initializable {
     private Button submit;
 
     @FXML
+    private Button confirmOrder;
+
+    @FXML
     private Text cones;
 
     @FXML
@@ -160,6 +163,12 @@ public class Controller extends VBox implements Initializable {
 
     @FXML
     private Text ballsOrdered;
+
+    @FXML
+    private Text valueOfOrder;
+
+    @FXML
+    private Text listOfOrderedItems;
 
     @FXML
     private TextField conesUpdate;
@@ -265,6 +274,7 @@ public class Controller extends VBox implements Initializable {
             itemsOrdered.setText("Items ordered: " + items);
             orderList[items] = iceCreamCar.orderIceRocket();
             stockStatusClicked();
+            orderButtons.setVisible(true);
         }
 
 
@@ -297,6 +307,36 @@ public class Controller extends VBox implements Initializable {
             orderButtons.setVisible(false);
             ballFlavors.setVisible(true);
         }
+    }
+
+    @FXML
+    public void confirmOrderClicked(){
+        valueOfOrder.setText("Value of your order= €"+String.format("%.2f", iceCreamCar.getProfit()));
+        for (Eatable orderItem : orderList) {
+            if (orderItem != null) {
+                orderItem.eat();
+            }
+        }
+        String[] orderListForOutput= new String[items];
+        int i=0;
+        for (Eatable orderItem : orderList) {
+            if (orderItem != null) {
+                orderListForOutput[i] = orderItem.createOrderOutput();
+                i++;
+            }
+        }
+        StringBuilder textContent = new StringBuilder("");
+        for (String stringOfOrderedItem : orderListForOutput){
+            textContent.append(stringOfOrderedItem).append("\n");
+
+            //System.out.println(stringOfOrderedItem);
+        }
+
+
+        listOfOrderedItems.setText(textContent.toString());
+
+        items=0;
+        itemsOrdered.setText("Items ordered: " + items);
     }
 
     @FXML
@@ -436,27 +476,24 @@ public class Controller extends VBox implements Initializable {
     public void submitBallsClicked() throws NoMoreIceCreamException {
         System.out.println("Submit balls button clicked");
         Cone.Flavor[] flavors = new Cone.Flavor[ballsCounter];
-        for (int i =0; i< flavors.length;i++){
-                flavors[i] = orderedFlavors[i+1];
-                System.out.print("Ball " + i + ": ");
-                System.out.println(flavors[i]);
+        for (int i = 0; i < flavors.length; i++) {
+            flavors[i] = orderedFlavors[i + 1];
+            System.out.print("Ball " + (i + 1) + ": ");
+            System.out.println(flavors[i]);
         }
-        System.out.println("Ordered items: "+items);
+        System.out.println("Ordered items: " + items);
         orderList[items] = iceCreamCar.orderCone(flavors);
         stockStatusClicked();
 
-        ballsCounter=0;
-        ballsOrdered.setText("Balls ordered: "+ String.valueOf(ballsCounter));
+        ballsCounter = 0;
+        ballsOrdered.setText("Balls ordered: " + String.valueOf(ballsCounter));
         ballFlavors.setVisible(false);
         orderButtons.setVisible(true);
 
-        for (Eatable orderItem : orderList) {
-            if (orderItem != null) {
-                orderItem.eat();
-            }
-        }
 
-        }
+
+
+    }
 
 
     @Override

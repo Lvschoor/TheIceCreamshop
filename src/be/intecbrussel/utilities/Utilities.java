@@ -106,4 +106,6 @@ public class Utilities {
         System.out.println("Magnums : " + stock.getMagni());
 
     }
+
+
 }

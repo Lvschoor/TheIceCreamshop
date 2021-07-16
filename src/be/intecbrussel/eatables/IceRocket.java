@@ -12,4 +12,10 @@ public class IceRocket implements Eatable {
         System.out.println("You are eating an Ice Rocket.");
 
     }
+// method used in GUI to create array of orders in string format
+    @Override
+    public String createOrderOutput() {
+        String orderlistForOutput = "Ice Rocket";
+            return orderlistForOutput;
+    }
 }
