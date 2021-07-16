@@ -83,4 +83,11 @@ public class IceCreamCar implements IceCreamSeller {
     public double getProfit() {
         return profit;
     }
+
+    @Override
+    public void setProfit() {
+        this.profit = 0;
+    }
+
+
 }

@@ -13,74 +13,82 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700" minWidth="-Infinity" prefHeight="700.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
-   <Pane>
-          <Label fx:id="label1" alignment="TOP_CENTER" layoutX="250.0" layoutY="2.0" text="The best Ice Cream Car in the world!" textAlignment="CENTER" underline="true">
-         <padding>
-            <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
-         </padding></Label>
-   </Pane>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700" minWidth="-Infinity"
+      prefHeight="700.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
+    <Pane>
+        <Label fx:id="title" alignment="TOP_CENTER" layoutX="250.0" layoutY="2.0"
+               text="The best Ice Cream Car in the world!" textAlignment="CENTER" underline="true">
+            <padding>
+                <Insets bottom="15.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Label>
+    </Pane>
 
     <SplitPane dividerPositions="0.33, 0.66" prefHeight="60.0" prefWidth="200.0">
         <AnchorPane minHeight="55.0" minWidth="0.0" prefHeight="55.0" prefWidth="100.0">
-            <Button fx:id="stockStatus" layoutX="15.0" layoutY="20.0" onAction="#stockStatusClicked" text="Get stock status">
+            <Button fx:id="stockStatus" layoutX="15.0" layoutY="20.0" onAction="#stockStatusClicked"
+                    text="Get stock status">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                 </padding>
             </Button>
         </AnchorPane>
         <AnchorPane minHeight="55.0" minWidth="0.0" prefHeight="55.0" prefWidth="100.0">
-            <Button fx:id="updateStock" layoutX="15.0" layoutY="20.0" onAction="#updateStockClicked" text="Update stock">
+            <Button fx:id="updateStock" layoutX="15.0" layoutY="20.0" onAction="#updateStockClicked"
+                    text="Update stock">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                 </padding>
             </Button>
         </AnchorPane>
         <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="55.0" minWidth="0.0" prefHeight="55.0" prefWidth="100.0">
             <FlowPane layoutX="15.0" layoutY="20.0" prefHeight="8.0" prefWidth="400.0">
-            <Button fx:id="button4" layoutX="15.0" layoutY="20.0" onAction="#orderIceCreamClicked" text="Order Ice Cream">
-                <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                </padding>
-            </Button>
-            <Text fx:id="itemsOrdered" text="Items ordered: 0" visible="true">
-               <FlowPane.margin>
-                  <Insets left="10.0" />
-               </FlowPane.margin></Text>
-        </FlowPane>
+                <Button fx:id="orderIceCream" layoutX="15.0" layoutY="20.0" onAction="#orderIceCreamClicked"
+                        text="Order Ice Cream">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Text fx:id="itemsOrdered" text="Items ordered: 0" visible="true">
+                    <FlowPane.margin>
+                        <Insets left="10.0"/>
+                    </FlowPane.margin>
+                </Text>
+            </FlowPane>
         </AnchorPane>
     </SplitPane>
     <SplitPane fx:id="infoFields" dividerPositions="0.33, 0.66" layoutX="10.0" layoutY="192.0" visible="false">
         <AnchorPane prefHeight="200.0" prefWidth="100.0">
-            <Text fx:id="text1" layoutX="15.0" layoutY="30.0" text="Stock overview" visible="false" />
-            <Text fx:id="cones" layoutX="15.0" layoutY="60.0" />
-            <Text fx:id="balls" layoutX="15.0" layoutY="90.0" />
-            <Text fx:id="iceRockets" layoutX="15.0" layoutY="120.0" />
-            <Text fx:id="magni" layoutX="15.0" layoutY="150.0" />
+            <Text fx:id="stockOverviewText" layoutX="15.0" layoutY="30.0" text="Stock overview" visible="false"/>
+            <Text fx:id="cones" layoutX="15.0" layoutY="60.0"/>
+            <Text fx:id="balls" layoutX="15.0" layoutY="90.0"/>
+            <Text fx:id="iceRockets" layoutX="15.0" layoutY="120.0"/>
+            <Text fx:id="magni" layoutX="15.0" layoutY="150.0"/>
         </AnchorPane>
         <AnchorPane>
-            <Text fx:id="text2" layoutX="15.0" layoutY="30.0" text="Update stock" visible="false" />
+            <Text fx:id="updateStockText" layoutX="15.0" layoutY="30.0" text="Update stock" visible="false"/>
 
             <TextFlow fx:id="updateCones" layoutX="15.0" layoutY="45.0" visible="false">
-                <Text fx:id="cones2" text="Cones: " />
-                <TextField fx:id="conesUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40" />
+                <Text fx:id="cones2" text="Cones: "/>
+                <TextField fx:id="conesUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
             </TextFlow>
 
             <TextFlow fx:id="updateBalls" layoutX="15.0" layoutY="75.0" visible="false">
-                <Text fx:id="balls2" text="Ice cream balls: " />
-                <TextField fx:id="ballsUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40" />
+                <Text fx:id="balls2" text="Ice cream balls: "/>
+                <TextField fx:id="ballsUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
             </TextFlow>
             <TextFlow fx:id="updateIceRockets" layoutX="15.0" layoutY="105.0" visible="false">
-                <Text fx:id="iceRockets2" text="Ice Rockets: " />
-                <TextField fx:id="iceRocketsUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40" />
+                <Text fx:id="iceRockets2" text="Ice Rockets: "/>
+                <TextField fx:id="iceRocketsUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
             </TextFlow>
             <TextFlow fx:id="updateMagni" layoutX="15.0" layoutY="135.0" visible="false">
-                <Text fx:id="magni2" text="Magnums: " />
-                <TextField fx:id="magniUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40" />
+                <Text fx:id="magni2" text="Magnums: "/>
+                <TextField fx:id="magniUpdate" maxHeight="20" maxWidth="40" minHeight="20" minWidth="40"/>
             </TextFlow>
-            <Button fx:id="submitEntries" layoutX="15.0" layoutY="165.0" onAction="#submitEntriesClicked" text="Submit entries" visible="false">
+            <Button fx:id="submitEntries" layoutX="15.0" layoutY="165.0" onAction="#submitEntriesClicked"
+                    text="Submit entries" visible="false">
                 <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                 </padding>
             </Button>
         </AnchorPane>
@@ -88,109 +96,124 @@
             <VBox fx:id="orderButtons" layoutX="15.0" layoutY="30.0" minHeight="400.0" spacing="10" visible="false">
                 <Button fx:id="iceRocket" onAction="#iceRocketClicked" text="Ice Rocket" visible="true">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </padding>
                 </Button>
                 <Button fx:id="magnum" onAction="#magnumClicked" text="Magnum" visible="true">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </padding>
                 </Button>
                 <Button fx:id="cone" onAction="#coneClicked" text="Cone (max 5 balls)" visible="true">
                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </padding>
                 </Button>
-                <Separator prefWidth="200.0" />
-            <Button fx:id="confirmOrder" layoutX="10.0" layoutY="85.0" onAction="#confirmOrderClicked" text="Confirm your order" visible="true">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </Button>
+                <Separator prefWidth="200.0"/>
+                <Button fx:id="confirmOrder" layoutX="10.0" layoutY="85.0" onAction="#confirmOrderClicked"
+                        text="Confirm your order" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
 
             </VBox>
-         <VBox fx:id="magnumTypes" layoutX="15.0" layoutY="30.0" spacing="10" visible="false">
-               <Button fx:id="milk" onAction="#milkClicked" text="Milk Chocolate" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="white" onAction="#whiteClicked" text="White Chocolate" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="black" onAction="#blackClicked" text="Black Chocolate" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="nuts" layoutX="10.0" layoutY="85.0" onAction="#nutsClicked" text="Alpine Nuts" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="strawberry" layoutX="10.0" layoutY="123.0" onAction="#strawberryClicked" text="Romantic Strawberries" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-         </VBox>
-         <VBox fx:id="ballFlavors" layoutX="15.0" layoutY="30.0" spacing="10" visible="false">
-               <Button fx:id="strawberryBall" onAction="#strawberryBallClicked" text="Strawberry" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="banana" onAction="#bananaClicked" text="Banana" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="chocolate" onAction="#chocolateClicked" text="Chocolate" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="vanilla" layoutX="10.0" layoutY="85.0" onAction="#vanillaClicked" text="Vanilla" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="lemon" layoutX="10.0" layoutY="123.0" onAction="#lemonClicked" text="Lemon" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="straciatella" layoutX="10.0" layoutY="160.0" onAction="#straciatellaClicked" text="Straciatella" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="mokka" layoutX="10.0" layoutY="198.0" onAction="#mokkaClicked" text="Mokka" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-               <Button fx:id="pistache" layoutX="10.0" layoutY="236.0" onAction="#pistacheClicked" text="Pistache" visible="true">
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </Button>
-            <Separator prefWidth="200.0" />
-            <Text fx:id="ballsOrdered" text="Balls ordered: 0" visible="true" />
-            <Button fx:id="submit" layoutX="10.0" layoutY="273.0" onAction="#submitBallsClicked" text="Submit choice" visible="true">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </Button>
-         </VBox>
+            <VBox fx:id="magnumTypes" layoutX="15.0" layoutY="30.0" spacing="10" visible="false">
+                <Button fx:id="milk" onAction="#milkClicked" text="Milk Chocolate" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="white" onAction="#whiteClicked" text="White Chocolate" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="black" onAction="#blackClicked" text="Black Chocolate" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="nuts" layoutX="10.0" layoutY="85.0" onAction="#nutsClicked" text="Alpine Nuts"
+                        visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="strawberry" layoutX="10.0" layoutY="123.0" onAction="#strawberryClicked"
+                        text="Romantic Strawberries" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+            </VBox>
+            <VBox fx:id="ballFlavors" layoutX="15.0" layoutY="30.0" spacing="10" visible="false">
+                <Button fx:id="strawberryBall" onAction="#strawberryBallClicked" text="Strawberry" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="banana" onAction="#bananaClicked" text="Banana" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="chocolate" onAction="#chocolateClicked" text="Chocolate" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="vanilla" layoutX="10.0" layoutY="85.0" onAction="#vanillaClicked" text="Vanilla"
+                        visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="lemon" layoutX="10.0" layoutY="123.0" onAction="#lemonClicked" text="Lemon"
+                        visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="straciatella" layoutX="10.0" layoutY="160.0" onAction="#straciatellaClicked"
+                        text="Straciatella" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="mokka" layoutX="10.0" layoutY="198.0" onAction="#mokkaClicked" text="Mokka"
+                        visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Button fx:id="pistache" layoutX="10.0" layoutY="236.0" onAction="#pistacheClicked" text="Pistache"
+                        visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+                <Separator prefWidth="200.0"/>
+                <Text fx:id="ballsOrdered" text="Balls ordered: 0" visible="true"/>
+                <Button fx:id="submit" layoutX="10.0" layoutY="273.0" onAction="#submitBallsClicked"
+                        text="Submit choice" visible="true">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </padding>
+                </Button>
+            </VBox>
         </AnchorPane>
     </SplitPane>
     <AnchorPane minHeight="100.0">
-      <children>
-         <Separator prefWidth="200.0" />
-         <Text fx:id="valueOfOrder" layoutX="15.0" layoutY="15.0" text="Value of your order: € 0,00" visible="true" />
-         <Text fx:id="listOfOrderedItems" layoutX="15.0" layoutY="30.0" text="No items ordered yet." visible="true" />
-      </children></AnchorPane>
+        <Separator prefWidth="200.0"/>
+        <Text fx:id="valueOfOrder" layoutX="15.0" layoutY="15.0" text="Value of your order: € 0,00" visible="true"/>
+        <Text fx:id="listOfOrderedItems" layoutX="15.0" layoutY="30.0" text="No confirmed order yet." visible="true"/>
+        <Button fx:id="reset" layoutX="500.0" layoutY="15.0" onAction="#resetClicked" text="New Order"
+                visible="false">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+        </Button>
+
+    </AnchorPane>
 </VBox>

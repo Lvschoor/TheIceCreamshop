@@ -7,11 +7,5 @@ k
 ;src/be/intecbrussel/exceptions/NoMoreIceCreamException.java,2\2\229e2adf8ed69ff96b083da4085f50737d0128b5
 D
 src/module-info.java,c\d\cdc434daeee688944ced38ff1c9875422db88382
-Z
-*src/be/intecbrussel/sellers/PriceList.java,e\6\e69ee0ffc837abad9db1144f831a43c01564f345
-[
-+src/be/intecbrussel/sellers/Profitable.java,0\d\0ddaa5915f2f2d3b5842b8ce8acc89fe73b7a1a3
 `
 0src/be/intecbrussel/application/IceCreamApp.java,b\5\b55b1304eb2587e120ef1257733d00c19ccd5747
-V
-&src/be/intecbrussel/sellers/Stock.java,3\7\37dd52e35d26123f6c106781484e0ad1d0611ac8

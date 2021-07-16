@@ -1,21 +1,14 @@
 package be.intecbrussel.controller;
 
-import be.intecbrussel.eatables.Cone;
-import be.intecbrussel.eatables.Eatable;
-import be.intecbrussel.eatables.Magnum;
+import be.intecbrussel.eatables.*;
 import be.intecbrussel.exceptions.NoMoreIceCreamException;
-import be.intecbrussel.sellers.IceCreamSeller;
-import be.intecbrussel.sellers.PriceList;
+import be.intecbrussel.sellers.*;
 import be.intecbrussel.sellers.Stock;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.text.TextFlow;
+import javafx.scene.text.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,8 +39,7 @@ public class Controller extends VBox implements Initializable {
         this.orderList = orderList;
     }
 
-    @FXML
-    private Label label1;
+    // define all items from fxml file
 
     @FXML
     private SplitPane infoFields;
@@ -61,11 +53,11 @@ public class Controller extends VBox implements Initializable {
     @FXML
     private VBox orderButtons;
 
+    @FXML
+    private Text stockOverviewText;
 
     @FXML
-    private Text text1;
-    @FXML
-    private Text text2;
+    private Text updateStockText;
 
     @FXML
     private Button stockStatus;
@@ -77,7 +69,6 @@ public class Controller extends VBox implements Initializable {
     private Button submitEntries;
 
     @FXML
-
     private Button orderIceCream;
 
     @FXML
@@ -90,55 +81,13 @@ public class Controller extends VBox implements Initializable {
     private Button cone;
 
     @FXML
-    private Button milk;
-
-    @FXML
-    private Button white;
-
-    @FXML
-    private Button black;
-
-    @FXML
-    private Button nuts;
-
-    @FXML
-    private Button strawberry;
-
-    @FXML
-    private Button strawberryBall;
-
-    @FXML
-    private Button banana;
-
-    @FXML
-    private Button chocolate;
-
-    @FXML
-    private Button vanilla;
-
-    @FXML
-    private Button lemon;
-
-    @FXML
-    private Button straciatella;
-
-    @FXML
-    private Button mokka;
-
-    @FXML
-    private Button pistache;
-
-    @FXML
-    private Button submit;
-
-    @FXML
     private Button confirmOrder;
 
     @FXML
-    private Text cones;
+    private Button reset;
 
     @FXML
-    private Text cones2;
+    private Text cones;
 
     @FXML
     private Text balls;
@@ -148,15 +97,6 @@ public class Controller extends VBox implements Initializable {
 
     @FXML
     private Text magni;
-
-    @FXML
-    private Text balls2;
-
-    @FXML
-    private Text iceRockets2;
-
-    @FXML
-    private Text magni2;
 
     @FXML
     private Text itemsOrdered;
@@ -201,8 +141,8 @@ public class Controller extends VBox implements Initializable {
         System.out.println("Stock status button clicked");
         stockStatus.setText("Refresh stock status");
         orderButtons.setVisible(false);
-        text1.setVisible(true);
-        text2.setVisible(false);
+        stockOverviewText.setVisible(true);
+        updateStockText.setVisible(false);
         infoFields.setVisible(true);
         updateCones.setVisible(false);
         updateBalls.setVisible(false);
@@ -210,10 +150,10 @@ public class Controller extends VBox implements Initializable {
         updateMagni.setVisible(false);
         updateStock.setVisible(true);
         submitEntries.setVisible(false);
-        cones.setText("Cones: " + Integer.toString(stock.getCones()));
-        balls.setText("Ice cream balls: " + Integer.toString(stock.getBalls()));
-        iceRockets.setText("Ice Rockets: " + Integer.toString(stock.getIceRockets()));
-        magni.setText("Magnums: " + Integer.toString(stock.getMagni()));
+        cones.setText("Cones: " + stock.getCones());
+        balls.setText("Ice cream balls: " + stock.getBalls());
+        iceRockets.setText("Ice Rockets: " + stock.getIceRockets());
+        magni.setText("Magnums: " + stock.getMagni());
     }
 
     @FXML
@@ -222,7 +162,7 @@ public class Controller extends VBox implements Initializable {
         updateStock.setVisible(false);
         infoFields.setVisible(true);
         orderButtons.setVisible(false);
-        text2.setVisible(true);
+        updateStockText.setVisible(true);
         updateCones.setVisible(true);
         updateBalls.setVisible(true);
         updateIceRockets.setVisible(true);
@@ -242,13 +182,14 @@ public class Controller extends VBox implements Initializable {
         stock.setBalls(Integer.parseInt(ballsUpdate.getText()));
         stock.setIceRockets(Integer.parseInt(iceRocketsUpdate.getText()));
         stock.setMagni(Integer.parseInt(magniUpdate.getText()));
-        text2.setVisible(false);
+        updateStockText.setVisible(false);
         updateCones.setVisible(false);
         updateBalls.setVisible(false);
         updateIceRockets.setVisible(false);
         updateMagni.setVisible(false);
         updateStock.setVisible(true);
         submitEntries.setVisible(false);
+        stockStatusClicked();
 
     }
 
@@ -258,7 +199,7 @@ public class Controller extends VBox implements Initializable {
         infoFields.setVisible(true);
         ballFlavors.setVisible(false);
         magnumTypes.setVisible(false);
-        cone.setText("Cone (max "+ (Math.min(stock.getBalls(), 5)) + " balls)");
+        cone.setText("Cone (max " + (Math.min(stock.getBalls(), 5)) + " balls)");
         orderButtons.setVisible(true);
 
     }
@@ -310,15 +251,15 @@ public class Controller extends VBox implements Initializable {
     }
 
     @FXML
-    public void confirmOrderClicked(){
-        valueOfOrder.setText("Value of your order= €"+String.format("%.2f", iceCreamCar.getProfit()));
+    public void confirmOrderClicked() {
+        valueOfOrder.setText("Value of your order: € " + String.format("%.2f", iceCreamCar.getProfit()));
         for (Eatable orderItem : orderList) {
             if (orderItem != null) {
                 orderItem.eat();
             }
         }
-        String[] orderListForOutput= new String[items];
-        int i=0;
+        String[] orderListForOutput = new String[items];
+        int i = 0;
         for (Eatable orderItem : orderList) {
             if (orderItem != null) {
                 orderListForOutput[i] = orderItem.createOrderOutput();
@@ -326,17 +267,31 @@ public class Controller extends VBox implements Initializable {
             }
         }
         StringBuilder textContent = new StringBuilder("");
-        for (String stringOfOrderedItem : orderListForOutput){
+        for (String stringOfOrderedItem : orderListForOutput) {
             textContent.append(stringOfOrderedItem).append("\n");
-
-            //System.out.println(stringOfOrderedItem);
         }
-
-
         listOfOrderedItems.setText(textContent.toString());
-
-        items=0;
         itemsOrdered.setText("Items ordered: " + items);
+        confirmOrder.setVisible(false);
+        orderButtons.setVisible(false);
+        orderIceCream.setVisible(false);
+        reset.setVisible(true);
+    }
+
+    @FXML
+    public void resetClicked() {
+        items = 0;
+        ballsCounter = 0;
+        orderedFlavors = new Cone.Flavor[6];
+        orderList = new Eatable[100];
+        iceCreamCar.setProfit();
+        orderIceCreamClicked();
+        orderIceCream.setVisible(true);
+        itemsOrdered.setText("Items ordered: " + items);
+        confirmOrder.setVisible(true);
+        listOfOrderedItems.setText("");
+        valueOfOrder.setText("Value of your order: € 0,00");
+        reset.setVisible(false);
     }
 
     @FXML
@@ -392,83 +347,99 @@ public class Controller extends VBox implements Initializable {
 
 
     @FXML
-    public void strawberryBallClicked() {
+    public void strawberryBallClicked() throws NoMoreIceCreamException {
         System.out.println("Strawberry flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.STRAWBERRY;
-        System.out.println(orderedFlavors[ballsCounter]);
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.STRAWBERRY;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
 
     }
 
     @FXML
-    public void bananaClicked() {
+    public void bananaClicked() throws NoMoreIceCreamException {
         System.out.println("Banana flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.BANANA;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.BANANA;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
     @FXML
-    public void chocolateClicked() {
+    public void chocolateClicked() throws NoMoreIceCreamException {
         System.out.println("Chocolate flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.CHOCOLATE;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.CHOCOLATE;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
     @FXML
-    public void vanillaClicked() {
+    public void vanillaClicked() throws NoMoreIceCreamException {
         System.out.println("Vanilla flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.VANILLA;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.VANILLA;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
     @FXML
-    public void lemonClicked() {
+    public void lemonClicked() throws NoMoreIceCreamException {
         System.out.println("Lemon flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.LEMON;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.LEMON;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
     @FXML
-    public void mokkaClicked() {
+    public void mokkaClicked() throws NoMoreIceCreamException {
         System.out.println("Mokka flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.MOKKA;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.MOKKA;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
     @FXML
-    public void straciatellaClicked() {
+    public void straciatellaClicked() throws NoMoreIceCreamException {
         System.out.println("Straciatella flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.STRACIATELLA;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.STRACIATELLA;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
     @FXML
-    public void pistacheClicked() {
+    public void pistacheClicked() throws NoMoreIceCreamException {
         System.out.println("Lemon flavor button clicked");
         ballsCounter++;
-        ballsOrdered.setText("Balls ordered: "+ ballsCounter);
-        orderedFlavors[ballsCounter]= Cone.Flavor.PISTACHE;
-
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
+        orderedFlavors[ballsCounter] = Cone.Flavor.PISTACHE;
+        if (ballsCounter== stock.getBalls()){
+            submitBallsClicked();
+        }
 
     }
 
@@ -486,13 +457,10 @@ public class Controller extends VBox implements Initializable {
         stockStatusClicked();
 
         ballsCounter = 0;
-        ballsOrdered.setText("Balls ordered: " + String.valueOf(ballsCounter));
+        ballsOrdered.setText("Balls ordered: " + ballsCounter);
         ballFlavors.setVisible(false);
         orderButtons.setVisible(true);
-
-
-
-
+        cone.setText("Cone (max " + (Math.min(stock.getBalls(), 5)) + " balls)");
     }
 
 

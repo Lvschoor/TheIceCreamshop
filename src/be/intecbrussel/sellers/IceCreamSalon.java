@@ -17,6 +17,11 @@ public class IceCreamSalon implements IceCreamSeller {
         return totalProfit;
     }
 
+    @Override
+    public void setProfit() {
+        totalProfit=0;
+    }
+
     // order cone accepting variable amount of flavors, adding cone price to profit
     @Override
     public Cone orderCone(Cone.Flavor... flavors) {
